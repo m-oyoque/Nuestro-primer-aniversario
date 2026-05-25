@@ -21,3 +21,7 @@ setInterval(actualizarContador, 1000);
 function revealLetter() {
     document.getElementById("letter").classList.add("show");
 }
+
+function mensajeSecreto(){
+    document.getElementById("secretito").classList.add("show");
+}
