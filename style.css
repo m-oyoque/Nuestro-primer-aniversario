@@ -97,3 +97,16 @@ body::before{
   z-index:999;
 }
 
+#loader{
+  position:fixed;
+  width:100%;
+  height:100vh;
+  background:#050505;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  z-index:9999;
+  color:#98ffcc;
+  font-size:2rem;
+  transition:1s ease;
+}
