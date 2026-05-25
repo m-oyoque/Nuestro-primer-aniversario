@@ -10,7 +10,7 @@ function actualizarContador() {
 
     const contador = document.getElementById("contador");
 
-    if(contador){
+    if (contador) {
         contador.innerHTML =
         `${dias} días ♡ ${horas} horas ♡ ${minutos} minutos`;
     }
@@ -19,21 +19,39 @@ function actualizarContador() {
 setInterval(actualizarContador, 1000);
 
 function revealLetter() {
-    document.getElementById("letter").classList.add("show");
+    const letter = document.getElementById("letter");
+
+    if(letter){
+        letter.classList.add("show");
+    }
 }
 
-function mensajeSecreto(){
-    document.getElementById("secretito").classList.add("show");
+function mensajeSecreto() {
+    const secretito = document.getElementById("secretito");
+
+    if(secretito){
+        secretito.classList.add("show");
+    }
 }
 
 window.addEventListener("load", () => {
+
     const loader = document.getElementById("loader");
 
     if(loader){
-        loader.style.opacity = "0";
 
         setTimeout(() => {
-            loader.style.display = "none";
-        },1000);
+
+            loader.style.opacity = "0";
+
+            setTimeout(() => {
+                loader.style.display = "none";
+            }, 1000);
+
+        }, 1500);
+
     }
+
 });
+
+actualizarContador();
