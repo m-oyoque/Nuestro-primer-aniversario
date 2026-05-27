@@ -385,3 +385,134 @@ body{
 .right-btn{
     right:10px;
 }
+
+/* ===== SCROLL SUAVE ===== */
+
+html{
+    scroll-behavior:smooth;
+}
+
+/* ===== MAIN CONTENT ===== */
+
+#mainContent{
+    opacity:0;
+    transition:opacity 3s ease;
+}
+
+/* ===== ESTRELLAS ===== */
+
+.stars{
+    position:fixed;
+    width:100%;
+    height:100%;
+    top:0;
+    left:0;
+    pointer-events:none;
+    background-image:
+    radial-gradient(#ffffff 1px, transparent 1px);
+    background-size:40px 40px;
+    opacity:0.15;
+    z-index:-1;
+}
+
+/* ===== ENTER CONTAINER ===== */
+
+.enter-container{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    margin-top:40px;
+}
+
+/* ===== BOTÓN ENTRAR ===== */
+
+.intro-btn{
+    border:none;
+    cursor:pointer;
+    font-family:'Poppins', sans-serif;
+}
+
+/* ===== GALERÍA ===== */
+
+.gallery-section{
+    padding-top:20px;
+    padding-bottom:80px;
+}
+
+/* ===== ESPACIADO ===== */
+
+.hero{
+    padding-bottom:20px;
+}
+
+/* ===== CARRUSEL PRINCIPAL ===== */
+
+.carousel-track{
+    display:flex;
+    gap:20px;
+    overflow-x:auto;
+    scroll-behavior:smooth;
+    padding:20px;
+}
+
+.carousel-track img{
+    width:280px;
+    height:380px;
+    object-fit:cover;
+    border-radius:25px;
+    flex-shrink:0;
+    transition:0.5s ease;
+}
+
+.carousel-track img:hover{
+    transform:scale(1.05);
+}
+
+/* ===== OCULTAR SCROLL ===== */
+
+.carousel-track::-webkit-scrollbar,
+.carousel::-webkit-scrollbar{
+    display:none;
+}
+
+/* ===== CARTA ===== */
+
+#letter{
+    margin-top:30px;
+    white-space:pre-line;
+}
+
+/* ===== MENSAJE SECRETO ===== */
+
+#secretito{
+    margin-top:20px;
+    text-align:center;
+    color:#9a7b8f;
+    font-size:1.1rem;
+}
+
+/* ===== BOTONES NAVEGACIÓN ===== */
+
+.navigation-buttons{
+    margin-top:40px;
+}
+
+/* ===== RESPONSIVE EXTRA ===== */
+
+@media(max-width:768px){
+
+    .hero h1{
+        font-size:3.5rem;
+        line-height:1.2;
+    }
+
+    .loader-content h2{
+        font-size:3.5rem;
+    }
+
+    .carousel-track img{
+        width:220px;
+        height:320px;
+    }
+
+}
