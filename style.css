@@ -534,3 +534,41 @@ html{
     opacity:1;
     transform:translateY(0);
 }
+
+
+/* =========================
+SECCIONES SPA
+========================= */
+
+.hidden-section{
+    display:none;
+    opacity:0;
+    transform:translateY(40px);
+}
+
+.active-section{
+    display:block;
+    animation:fadeSection 1s ease;
+}
+
+@keyframes fadeSection{
+
+    from{
+        opacity:0;
+        transform:translateY(40px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}
+
+/* BOTÓN ENTRAR */
+
+.enter-container{
+    display:flex;
+    justify-content:center;
+    margin-top:40px;
+}
