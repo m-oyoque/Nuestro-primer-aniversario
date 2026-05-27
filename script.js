@@ -1,4 +1,4 @@
-const fechaInicio = new Date("2025-05-31T13:35:43");
+const fechaInicio = new Date(2025, 4, 31, 13, 35, 0);
 
 /* CONTADOR */
 
@@ -6,7 +6,7 @@ function actualizarContador(){
 
     const ahora = new Date();
 
-    const diferencia = ahora - fechaInicio;
+    const diferencia = ahora.getTime() - fechaInicio.getTime();
 
     const dias =
     Math.floor(diferencia / (1000 * 60 * 60 * 24));
@@ -40,10 +40,13 @@ actualizarContador();
 
 function revealLetter(){
 
-    const letter = document.getElementById("letter");
+    const letter =
+    document.getElementById("letter");
 
     if(letter){
+
         letter.classList.toggle("show");
+
     }
 
 }
@@ -52,10 +55,13 @@ function revealLetter(){
 
 function mensajeSecreto(){
 
-    const secretito = document.getElementById("secretito");
+    const secretito =
+    document.getElementById("secretito");
 
     if(secretito){
+
         secretito.classList.toggle("show");
+
     }
 
 }
@@ -73,27 +79,25 @@ window.addEventListener("load", () => {
     const music =
     document.getElementById("bgMusic");
 
-    /* iniciar música */
+    /* MÚSICA */
 
     if(music){
 
         music.volume = 0.4;
 
         music.play().catch(() => {
+
             console.log("Autoplay bloqueado");
+
         });
 
     }
 
-    /* esperar unos segundos */
+    /* TRANSICIÓN */
 
     setTimeout(() => {
 
-        /* desaparecer loader */
-
         loader.style.opacity = "0";
-
-        /* aparecer contenido */
 
         content.style.opacity = "1";
 
@@ -106,39 +110,3 @@ window.addEventListener("load", () => {
     },3500);
 
 });
-
-/* MUSICA */
-
-function toggleMusic(){
-
-    const music = document.getElementById("bgMusic");
-
-    if(!music) return;
-
-    if(music.paused){
-
-        music.play();
-
-    }else{
-
-        music.pause();
-
-    }
-
-}
-
-
-function moveCarousel(direction){
-
-    const carousel =
-    document.getElementById("carouselTrack");
-
-    if(!carousel) return;
-
-    carousel.scrollBy({
-        left: direction * 350,
-        behavior: "smooth"
-    });
-
-}
-
