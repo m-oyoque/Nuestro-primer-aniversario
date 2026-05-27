@@ -14,7 +14,14 @@
 
 <body>
 
-<!-- PANTALLA INICIAL -->
+  <!-- MÚSICA -->
+
+<audio id="bgMusic" loop>
+    <source src="music/sonido2.mp3" type="audio/mpeg">
+</audio>
+
+  
+<!-- Loader -->
 
 <div id="loader">
 
@@ -36,13 +43,15 @@
 
 <div id="mainContent">
 
-    <!-- HERO -->
+    <!-- Inicio (Hero) -->
 
     <section class="hero">
 
         <h1>En todas las líneas temporales...<br>siempre te elegiría a ti ♡</h1>
 
         <div id="contador"></div>
+    
+    </section>
 
     <section class="gallery-section" id="recuerdos">
 
@@ -50,6 +59,7 @@
             Nuestros momentos ♡
         </h2>
 
+      <!-- Carrusel -->
         <div class="carousel-wrapper">
 
             <div class="carousel-track" id="carouselTrack">
@@ -71,11 +81,13 @@
 
           <div class="enter-container">
           
-            <br></br>
-            
-            <a href="pages/recuerdos.html" class="nav-arrow">
+            <br><br>
+
+            <!-- Boton de Entrar -->
+           <button class="intro-btn"
+            onclick="mostrarSeccion('recuerdos')">
                 Entrar ♡
-            </a>
+            </button>
 
           </div>
           
@@ -83,19 +95,216 @@
 
     </section>
 
+<!-- RECUERDOS -->
+<section class="container">
+
+  <h1 class="title"> Nuestros recuerdos ♡ </h1>
+
+  <div class="carousel">
+
+    <div class="carousel-item">
+      <img src="images/foto1.jpg.jpeg">
+      <p>
+        “Aquí probablemente ya estaba enamorada hasta niveles peligrosos.”
+      </p>
+    </div>
+
+    <div class="carousel-item">
+      <img src="images/foto20.jpg.jpeg">
+      <p>
+        “Ese día entendí que contigo incluso los momentos simples se sienten especiales.”
+      </p>
+    </div>
+
+    <div class="carousel-item">
+      <img src="images/foto45.jpg.jpeg">
+      <p>
+        “Gracias por convertirte en uno de mis lugares favoritos.”
+      </p>
+    </div>
+
+    <div class="carousel-item">
+      <img src="images/foto37.jpg.jpeg">
+      <p>
+        “Eres mi lugar seguro.”
+      </p>
+    </div>
+
+    
+  </div>
+
+  <br><br>
+
+<div class="navigation-buttons">
+
+  <button class="intro-btn">
+    ❮
+  </button>
+
+  <button class="intro-btn">
+    ❯
+  </button>
+
+</div>
+  
+</section>
+
       
-    </section>
+<!-- Cosas que amo de ti -->
+<section class="container">
+
+  <h1 class="title">Cosas que amo de ti ♡</h1>
+
+  <div class="card">
+    Amo cómo sigues adelante incluso cuando la vida intenta cansarte.
+  </div>
+
+  <div class="card">
+    Amo la tranquilidad que siento cuando estoy contigo.
+  </div>
+
+  <div class="card">
+    Amo cómo haces que incluso los momentos simples se sientan especiales.
+  </div>
+
+  <div class="card">
+    Amo tu corazón, tu mente y tus sueños.
+  </div>
+
+  <div class="card">
+    Y amo profundamente coincidir contigo en esta vida ♡
+  </div>
+
+  <br><br>
+
+<div class="navigation-buttons">
+
+   <button class="intro-btn">
+    ❮
+  </button>
+
+  <button class="intro-btn">
+    ❯
+  </button>
+
+</div>
+  
+</section>
+
+
+<!-- Clips de animes -->
+<section class="container">
+
+  <h1 class="title">Clips de Animes que me recuerdan a nosotros ♡</h1>
+
+  <div class="stats">
+
+    <div class="stat-box">
+      +999 amor
+    </div>
+
+    <div class="stat-box">
+      Lugar seguro desbloqueado
+    </div>
+
+    <div class="stat-box">
+      Persona favorita encontrada
+    </div>
+
+    <div class="stat-box">
+      Paz mental aumentada
+    </div>
+
+    <div class="stat-box">
+      Main character energy activada
+    </div>
+
+    <div class="stat-box">
+      Felicidad infinita contigo
+    </div>
+
+  </div>
+
+  <br><br>
+
+  <div class="navigation-buttons">
+
+  <button class="intro-btn">
+    ❮
+  </button>
+
+  <button class="intro-btn">
+    ❯
+  </button>
+
+</div>
+  
+</section>
+
+
+      <!-- Carta -->
+<section class="container">
+
+  <h1 class="title">Para ti ♡</h1>
+
+  <button onclick="revealLetter()" class="btn">
+    Leer lo que mi corazón nunca se calla
+  </button>
+
+  <div id="letter" class="hidden-text card">
+
+    Gracias por existir en mi misma línea temporal.
+
+    Gracias por seguir adelante incluso cuando las cosas se ponen difíciles.
+
+    Te admiro muchísimo por la manera en la que luchas por tus sueños y por cómo sigues avanzando incluso cuando estás cansado.
+
+    Si la vida fuera un anime…
+    seguirías siendo mi personaje favorito.
+
+    Porque incluso en tus momentos más difíciles, sigues intentando levantarte.
+
+    Y eso es una de las cosas que más amo de ti.
+
+    Gracias por amarme.
+    Gracias por quedarte.
+    Gracias por convertirte en mi lugar seguro.
+
+    Te amo mucho muhcote ♡
+
+  </div>
+
+<br><br>
+
+<button onclick="mensajeSecreto()" class="btn">
+  Mensaje secreto ♡
+</button>
+
+<p id="secretito" class="hidden-text">
+  En todas las vidas posibles…
+  seguiría buscándote.
+  Te amo
+</p>
+
+<div class="navigation-buttons">
+
+  <button class="intro-btn">
+    ❮
+  </button>
+
+  <button class="intro-btn">
+    ❯
+  </button>
+
+</div>
+  
+</section>
 
 
 </div>
 
-<!-- MÚSICA -->
-
-<audio id="bgMusic" loop>
-    <source src="music/sonido2.mp3" type="audio/mpeg">
-</audio>
-
 <script src="script.js"></script>
 
-</body>
+
+</body>  
 </html>
