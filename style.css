@@ -257,3 +257,78 @@ body{
     transform:scale(1.1);
     background:#f4acb7;
 }
+
+body{
+    animation:fadePage 1s ease;
+}
+
+@keyframes fadePage{
+
+    from{
+        opacity:0;
+    }
+
+    to{
+        opacity:1;
+    }
+
+}
+
+.gallery-section{
+    padding:100px 5%;
+}
+
+.carousel-wrapper{
+    position:relative;
+    overflow:hidden;
+}
+
+.carousel-track{
+    display:flex;
+    gap:20px;
+    overflow-x:auto;
+    scroll-behavior:smooth;
+    padding:20px;
+}
+
+.carousel-track::-webkit-scrollbar{
+    display:none;
+}
+
+.carousel-track img{
+    width:280px;
+    height:380px;
+    object-fit:cover;
+    border-radius:25px;
+    flex-shrink:0;
+    transition:0.4s ease;
+    box-shadow:0 10px 30px rgba(212,163,115,0.15);
+}
+
+.carousel-track img:hover{
+    transform:scale(1.04);
+}
+
+.carousel-btn{
+    position:absolute;
+    top:50%;
+    transform:translateY(-50%);
+    width:60px;
+    height:60px;
+    border:none;
+    border-radius:50%;
+    background:white;
+    color:#c08497;
+    font-size:2rem;
+    cursor:pointer;
+    z-index:5;
+    box-shadow:0 5px 20px rgba(212,163,115,0.2);
+}
+
+.left-btn{
+    left:10px;
+}
+
+.right-btn{
+    right:10px;
+}
