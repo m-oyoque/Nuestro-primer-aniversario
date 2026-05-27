@@ -52,27 +52,50 @@ function mensajeSecreto(){
 
 }
 
-/* LOADER */
+/* LOADER AUTOMÁTICO */
 
 window.addEventListener("load", () => {
 
-    const loader = document.getElementById("loader");
+    const loader =
+    document.getElementById("loader");
 
-    if(loader){
+    const content =
+    document.getElementById("mainContent");
+
+    const music =
+    document.getElementById("bgMusic");
+
+    /* iniciar música */
+
+    if(music){
+
+        music.volume = 0.4;
+
+        music.play().catch(() => {
+            console.log("Autoplay bloqueado");
+        });
+
+    }
+
+    /* esperar unos segundos */
+
+    setTimeout(() => {
+
+        /* desaparecer loader */
+
+        loader.style.opacity = "0";
+
+        /* aparecer contenido */
+
+        content.style.opacity = "1";
 
         setTimeout(() => {
 
-            loader.style.opacity = "0";
+            loader.style.display = "none";
 
-            setTimeout(() => {
+        },4000);
 
-                loader.style.display = "none";
-
-            },1000);
-
-        },1000);
-
-    }
+    },3500);
 
 });
 
@@ -111,46 +134,3 @@ function moveCarousel(direction){
 
 }
 
-
-
-function entrarPagina(){
-
-    const loader =
-    document.getElementById("loader");
-
-    const content =
-    document.getElementById("mainContent");
-
-    const music =
-    document.getElementById("bgMusic");
-
-    /* MUSICA */
-
-    if(music){
-
-        music.volume = 0.4;
-
-        music.play();
-
-    }
-
-    /* TRANSICIÓN LENTA */
-
-    loader.style.opacity = "0";
-
-    setTimeout(() => {
-
-        loader.style.display = "none";
-
-        content.style.opacity = "1";
-
-        /* SCROLL SUAVE */
-
-        window.scrollTo({
-            top:0,
-            behavior:"smooth"
-        });
-
-    },2500);
-
-}
