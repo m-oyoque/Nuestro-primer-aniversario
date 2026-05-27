@@ -50,7 +50,7 @@ body{
 
 #mainContent{
     opacity:0;
-    transition:4s ease;
+    transition:3s ease;
 }
 
 @keyframes fadeLoader{
