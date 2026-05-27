@@ -1,19 +1,27 @@
-const fechaInicio = new Date("2024-05-31T00:00:00:00");
+const fechaInicio = new Date("2025-05-31T13:35:43");
 
 /* CONTADOR */
 
 function actualizarContador(){
 
     const ahora = new Date();
+
     const diferencia = ahora - fechaInicio;
 
-    const dias = Math.floor(diferencia / (1000 * 60 * 60 * 24));
-    const horas = Math.floor((diferencia / (1000 * 60 * 60)) % 24);
-    const minutos = Math.floor((diferencia / (1000 * 60)) % 60);
-    const segundos = Math.floor((diferencia / (1000 * 60)) % 60);
+    const dias =
+    Math.floor(diferencia / (1000 * 60 * 60 * 24));
 
+    const horas =
+    Math.floor((diferencia / (1000 * 60 * 60)) % 24);
 
-    const contador = document.getElementById("contador");
+    const minutos =
+    Math.floor((diferencia / (1000 * 60)) % 60);
+
+    const segundos =
+    Math.floor((diferencia / 1000) % 60);
+
+    const contador =
+    document.getElementById("contador");
 
     if(contador){
 
