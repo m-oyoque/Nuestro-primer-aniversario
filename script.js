@@ -1,12 +1,15 @@
 const fechaInicio = new Date(2025, 4, 31, 13, 35, 0);
 
+/* ========================= */
 /* CONTADOR */
+/* ========================= */
 
 function actualizarContador(){
 
     const ahora = new Date();
 
-    const diferencia = ahora.getTime() - fechaInicio.getTime();
+    const diferencia =
+    ahora.getTime() - fechaInicio.getTime();
 
     const dias =
     Math.floor(diferencia / (1000 * 60 * 60 * 24));
@@ -36,7 +39,9 @@ setInterval(actualizarContador,1000);
 
 actualizarContador();
 
-/* CARTAS */
+/* ========================= */
+/* CARTA */
+/* ========================= */
 
 function revealLetter(){
 
@@ -51,7 +56,9 @@ function revealLetter(){
 
 }
 
-/* MENSAJE SECRETO */
+/* ========================= */
+/* MENSAJE */
+/* ========================= */
 
 function mensajeSecreto(){
 
@@ -66,7 +73,9 @@ function mensajeSecreto(){
 
 }
 
-/* LOADER AUTOMÁTICO */
+/* ========================= */
+/* LOADER */
+/* ========================= */
 
 window.addEventListener("load", () => {
 
@@ -79,21 +88,33 @@ window.addEventListener("load", () => {
     const music =
     document.getElementById("bgMusic");
 
-    /* MÚSICA */
+    /* Música */
 
     if(music){
 
         music.volume = 0.4;
 
-        music.play().catch(() => {
+        const intentarMusica = () => {
 
-            console.log("Autoplay bloqueado");
+            music.play().catch(() => {
 
-        });
+                console.log("Autoplay bloqueado");
+
+            });
+
+        };
+
+        intentarMusica();
+
+        document.addEventListener(
+            "click",
+            intentarMusica,
+            { once:true }
+        );
 
     }
 
-    /* TRANSICIÓN */
+    /* Loader */
 
     setTimeout(() => {
 
@@ -110,3 +131,34 @@ window.addEventListener("load", () => {
     },3500);
 
 });
+
+/* ========================= */
+/* CARRUSEL AUTOMÁTICO */
+/* ========================= */
+
+const carousel =
+document.getElementById("carouselTrack");
+
+let scrollAmount = 0;
+
+function autoScrollCarousel(){
+
+    if(!carousel) return;
+
+    scrollAmount += 1;
+
+    carousel.scrollLeft = scrollAmount;
+
+    if(
+        scrollAmount >=
+        carousel.scrollWidth -
+        carousel.clientWidth
+    ){
+
+        scrollAmount = 0;
+
+    }
+
+}
+
+setInterval(autoScrollCarousel,20);
