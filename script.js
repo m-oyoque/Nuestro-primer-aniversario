@@ -93,3 +93,18 @@ function toggleMusic(){
     }
 
 }
+
+
+function moveCarousel(direction){
+
+    const carousel =
+    document.getElementById("carouselTrack");
+
+    if(!carousel) return;
+
+    carousel.scrollBy({
+        left: direction * 350,
+        behavior: "smooth"
+    });
+
+}
