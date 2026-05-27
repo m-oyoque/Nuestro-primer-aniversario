@@ -249,3 +249,21 @@ function mostrarSeccion(idSeccion){
     }
 
 }
+
+
+function iniciarExperiencia(){
+
+    const music =
+    document.getElementById("bgMusic");
+
+    if(music){
+
+        music.volume = 0.4;
+
+        music.play();
+
+    }
+
+    mostrarSeccion("section-recuerdos");
+
+}
