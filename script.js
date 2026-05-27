@@ -210,3 +210,42 @@ function entrarUniverso(){
     });
 
 }
+
+/* =========================
+SPA SECCIONES
+========================= */
+
+function mostrarSeccion(idSeccion){
+
+    /* ocultar todas */
+
+    const secciones =
+    document.querySelectorAll(".container");
+
+    secciones.forEach(section => {
+
+        section.classList.remove("active-section");
+
+        section.classList.add("hidden-section");
+
+    });
+
+    /* mostrar sección elegida */
+
+    const seccionActiva =
+    document.getElementById(idSeccion);
+
+    if(seccionActiva){
+
+        seccionActiva.classList.remove("hidden-section");
+
+        seccionActiva.classList.add("active-section");
+
+        window.scrollTo({
+            top:0,
+            behavior:"smooth"
+        });
+
+    }
+
+}
