@@ -27,10 +27,44 @@ body{
     transition:2.5s ease;
 }
 
-#loader h2{
+.loader-content{
+    text-align:center;
+    max-width:700px;
+    padding:40px;
+    animation:fadeLoader 3s ease;
+}
+
+.loader-content h2{
     font-family:'Great Vibes', cursive;
-    font-size:4rem;
+    font-size:6rem;
     color:#d4a373;
+    margin-bottom:20px;
+}
+
+.loader-content p{
+    color:#9a7b8f;
+    line-height:1.8;
+    margin-bottom:40px;
+    font-size:1.1rem;
+}
+
+#mainContent{
+    opacity:0;
+    transition:3s ease;
+}
+
+@keyframes fadeLoader{
+
+    from{
+        opacity:0;
+        transform:translateY(20px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
 }
 
 /* Hero */
