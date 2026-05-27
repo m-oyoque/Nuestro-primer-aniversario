@@ -162,3 +162,51 @@ function autoScrollCarousel(){
 }
 
 setInterval(autoScrollCarousel,20);
+
+
+/* ========================= */
+/* ENTRAR AL UNIVERSO */
+/* ========================= */
+
+function entrarUniverso(){
+
+    const music =
+    document.getElementById("bgMusic");
+
+    const hero =
+    document.querySelector(".hero");
+
+    const gallery =
+    document.querySelector(".gallery-section");
+
+    const recuerdos =
+    document.getElementById("seccionRecuerdos");
+
+    /* MÚSICA */
+
+    if(music){
+
+        music.volume = 0.4;
+
+        music.play();
+
+    }
+
+    /* OCULTAR INICIO */
+
+    hero.style.display = "none";
+
+    gallery.style.display = "none";
+
+    /* MOSTRAR RECUERDOS */
+
+    recuerdos.classList.add("active-section");
+
+    /* SCROLL */
+
+    window.scrollTo({
+        top:0,
+        behavior:"smooth"
+    });
+
+}
