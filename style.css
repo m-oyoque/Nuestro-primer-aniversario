@@ -572,3 +572,8 @@ SECCIONES SPA
     justify-content:center;
     margin-top:40px;
 }
+
+
+.main-screen{
+    min-height:100vh;
+}
