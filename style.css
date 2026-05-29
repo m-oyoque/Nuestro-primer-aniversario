@@ -7,12 +7,18 @@
 }
 
 body{
-    background:#fffafc;
+    background:
+    radial-gradient(circle at top,
+    #fffafc 0%,
+    #fdf1f5 35%,
+    #f8e8ef 60%,
+    #f5dce7 100%);
+
     color:#5c4452;
     font-family:'Poppins', sans-serif;
     overflow-x:hidden;
+    min-height:100vh;
 }
-
 /* Loader */
 
 #loader{
@@ -162,6 +168,8 @@ body{
 .card,
 .stat-box,
 .carousel-item{
+    backdrop-filter:blur(10px);
+    border:1px solid rgba(255,255,255,0.4);
     background:white;
     border-radius:30px;
     padding:30px;
@@ -482,6 +490,8 @@ html{
 /* ===== BOTÓN ENTRAR ===== */
 
 .intro-btn{
+    box-shadow:
+    0 0 20px rgba(247,202,208,0.7);
     border:none;
     cursor:pointer;
     font-family:'Poppins', sans-serif;
@@ -598,7 +608,7 @@ SECCIONES SPA
 .hidden-section{
     display:none;
     opacity:0;
-    transform:translateY(40px);
+    transform:translateY(30px);
 }
 
 .active-section{
@@ -642,4 +652,88 @@ SECCIONES SPA
 
 .active-section{
     display:block;
+}
+
+/* ESTRELLAS */
+
+.stars{
+    position:fixed;
+    width:100%;
+    height:100%;
+    top:0;
+    left:0;
+    pointer-events:none;
+    z-index:-2;
+    overflow:hidden;
+}
+
+.stars::before,
+.stars::after{
+    content:"";
+    position:absolute;
+    width:200%;
+    height:200%;
+    background-image:
+    radial-gradient(white 1px, transparent 1px);
+
+    background-size:50px 50px;
+
+    opacity:0.15;
+
+    animation:moveStars 90s linear infinite;
+}
+
+.stars::after{
+    animation-duration:140s;
+    opacity:0.08;
+}
+
+@keyframes moveStars{
+
+    from{
+        transform:translateY(0);
+    }
+
+    to{
+        transform:translateY(-500px);
+    }
+
+}
+
+/* PÉTALOS */
+
+.petals{
+    position:fixed;
+    width:100%;
+    height:100%;
+    top:0;
+    left:0;
+    pointer-events:none;
+    overflow:hidden;
+    z-index:-1;
+}
+
+.petals::before{
+    content:"🌸 🌸 🌸 🌸 🌸 🌸 🌸 🌸";
+    position:absolute;
+    top:-10%;
+    left:0;
+    width:100%;
+    font-size:25px;
+
+    animation:fallPetals 20s linear infinite;
+
+    opacity:0.45;
+}
+
+@keyframes fallPetals{
+
+    from{
+        transform:translateY(-10%);
+    }
+
+    to{
+        transform:translateY(120vh);
+    }
+
 }
