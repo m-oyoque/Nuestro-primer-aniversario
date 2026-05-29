@@ -654,86 +654,64 @@ SECCIONES SPA
     display:block;
 }
 
-/* ESTRELLAS */
 
-.stars{
-    position:fixed;
+/* =========================
+   CLIPS
+========================= */
+
+.clips-container{
+    display:flex;
+    gap:30px;
+    overflow-x:auto;
+    scroll-behavior:smooth;
+    padding:20px;
+}
+
+.clips-container::-webkit-scrollbar{
+    display:none;
+}
+
+.clip-card{
+    min-width:320px;
+    max-width:320px;
+    background:white;
+    border-radius:30px;
+    padding:20px;
+    box-shadow:0 10px 30px rgba(212,163,115,0.08);
+    flex-shrink:0;
+    transition:0.4s ease;
+}
+
+.clip-card:hover{
+    transform:translateY(-8px);
+}
+
+.clip-card video{
     width:100%;
-    height:100%;
-    top:0;
-    left:0;
-    pointer-events:none;
-    z-index:-2;
-    overflow:hidden;
+    height:570px;
+    object-fit:cover;
+    border-radius:20px;
+    display:block;
 }
 
-.stars::before,
-.stars::after{
-    content:"";
-    position:absolute;
-    width:200%;
-    height:200%;
-    background-image:
-    radial-gradient(white 1px, transparent 1px);
-
-    background-size:50px 50px;
-
-    opacity:0.15;
-
-    animation:moveStars 90s linear infinite;
+.clip-card p{
+    margin-top:18px;
+    text-align:center;
+    line-height:1.7;
+    color:#7c6572;
+    font-size:1rem;
 }
 
-.stars::after{
-    animation-duration:140s;
-    opacity:0.08;
-}
+/* Responsive */
 
-@keyframes moveStars{
+@media(max-width:768px){
 
-    from{
-        transform:translateY(0);
+    .clip-card{
+        min-width:85%;
     }
 
-    to{
-        transform:translateY(-500px);
-    }
-
-}
-
-/* PÉTALOS */
-
-.petals{
-    position:fixed;
-    width:100%;
-    height:100%;
-    top:0;
-    left:0;
-    pointer-events:none;
-    overflow:hidden;
-    z-index:-1;
-}
-
-.petals::before{
-    content:"🌸 🌸 🌸 🌸 🌸 🌸 🌸 🌸";
-    position:absolute;
-    top:-10%;
-    left:0;
-    width:100%;
-    font-size:25px;
-
-    animation:fallPetals 20s linear infinite;
-
-    opacity:0.45;
-}
-
-@keyframes fallPetals{
-
-    from{
-        transform:translateY(-10%);
-    }
-
-    to{
-        transform:translateY(120vh);
+    .clip-card video{
+        height:500px;
     }
 
 }
