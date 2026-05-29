@@ -577,3 +577,14 @@ SECCIONES SPA
 .main-screen{
     min-height:100vh;
 }
+
+
+/* SISTEMA SPA */
+
+.hidden-section{
+    display:none;
+}
+
+.active-section{
+    display:block;
+}
