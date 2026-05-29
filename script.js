@@ -251,3 +251,61 @@ function mostrarSeccion(idSeccion){
     }
 
 }
+
+/* MOSTRAR SECCIONES */
+
+function mostrarSeccion(idSeccion){
+
+    /* ocultar todas */
+
+    const secciones =
+    document.querySelectorAll(
+        ".main-screen, .container"
+    );
+
+    secciones.forEach(seccion => {
+
+        seccion.classList.remove("active-section");
+        seccion.classList.add("hidden-section");
+
+    });
+
+    /* mostrar sección elegida */
+
+    const seccionActiva =
+    document.getElementById(idSeccion);
+
+    if(seccionActiva){
+
+        seccionActiva.classList.remove("hidden-section");
+        seccionActiva.classList.add("active-section");
+
+        window.scrollTo({
+            top:0,
+            behavior:"smooth"
+        });
+
+    }
+
+}
+
+
+/* BOTÓN ENTRAR */
+
+function iniciarExperiencia(){
+
+    const music =
+    document.getElementById("bgMusic");
+
+    if(music){
+
+        music.volume = 0.4;
+
+        music.play();
+
+    }
+
+    mostrarSeccion("section-recuerdos");
+
+}
+
