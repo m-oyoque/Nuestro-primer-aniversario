@@ -357,10 +357,46 @@ body{
 
 .carousel-track{
     display:flex;
-    gap:20px;
-    overflow-x:auto;
-    scroll-behavior:smooth;
-    padding:20px;
+    gap:25px;
+    width:max-content;
+    animation:scrollCarousel 45s linear infinite;
+    padding:20px 0;
+}
+
+.carousel-track img{
+    width:260px;
+    height:360px;
+    object-fit:cover;
+    border-radius:30px;
+    flex-shrink:0;
+    transition:0.5s ease;
+    box-shadow:0 10px 30px rgba(212,163,115,0.18);
+}
+
+.carousel-track img:hover{
+    transform:scale(1.05);
+}
+
+/* CONTENEDOR */
+
+.carousel-wrapper{
+    overflow:hidden;
+    position:relative;
+    width:100%;
+}
+
+/* ANIMACIÓN */
+
+@keyframes scrollCarousel{
+
+    from{
+        transform:translateX(0);
+    }
+
+    to{
+        transform:translateX(-50%);
+    }
+
 }
 
 .carousel-track::-webkit-scrollbar{
