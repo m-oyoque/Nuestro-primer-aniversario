@@ -217,10 +217,12 @@ SPA SECCIONES
 
 function mostrarSeccion(idSeccion){
 
-    /* ocultar todas */
+    /* ocultar TODAS las secciones */
 
     const secciones =
-    document.querySelectorAll(".container");
+    document.querySelectorAll(
+        ".container, .main-screen"
+    );
 
     secciones.forEach(section => {
 
@@ -247,23 +249,5 @@ function mostrarSeccion(idSeccion){
         });
 
     }
-
-}
-
-
-function iniciarExperiencia(){
-
-    const music =
-    document.getElementById("bgMusic");
-
-    if(music){
-
-        music.volume = 0.4;
-
-        music.play();
-
-    }
-
-    mostrarSeccion("section-recuerdos");
 
 }
